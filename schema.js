@@ -27,6 +27,7 @@ const typeDefs = gql`
   type Mutation {
     addPost(title: String!, description: String!, image: String!, author: String!): Post
     deletePost(id: Int!): Boolean
+    likePost(id: Int!): Boolean
   }
 `;
 

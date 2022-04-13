@@ -26,6 +26,14 @@ const resolvers = {
             }
             posts.splice(index, 1);
             return true;
+        },
+        likePost: (_, { id }) => {
+            const index = posts.findIndex(post => post.id === id);
+            if (index === -1) {
+                return false;
+            }
+            posts[index].likes++;
+            return true;
         }
     }
   };
